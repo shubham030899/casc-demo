@@ -155,6 +155,8 @@ security:
       - "new org.yaml.snakeyaml.Yaml"
       - "method org.yaml.snakeyaml.Yaml load java.lang.String"
       - "staticMethod groovy.json.JsonOutput toJson java.lang.Object"
+      
+      \*
 
   kerberosSso:
     enabled: true
@@ -170,10 +172,12 @@ security:
     # and b) harmless in production that does not support http at all
     allowUnsecureBasic: true
     promptNtlm: false
+    */
 
 ##########################################################################
 # rest of plugins configuration
 ##########################################################################
+/*
 unclassified:
   location:
     adminAddress: "AMQ Streams Jenkins CI <kafka-jenkins@redhat.com>"
@@ -271,6 +275,7 @@ unclassified:
         displayName: "Polarion"
         iconFileName: "/userContent/polarion.png"
         urlName: "https://polarion.engineering.redhat.com/polarion/#/project/KAFKA/home"
+        */
 
 ##########################################################################
 # casc config
@@ -286,6 +291,7 @@ credentials:
   system:
     domainCredentials:
       - credentials:
+      /*
           - openstackV3:
               description: "credentials for openstack cloud"
               id: "openstack-credentials"
@@ -294,6 +300,7 @@ credentials:
               projectName: "maas-jenkins"
               userDomain: "redhat.com"
               userName: "maas-jenkins-admin"
+              */
           - basicSSHUserPrivateKey:
               id: "cloud-user-ssh"
               privateKeySource:
@@ -460,11 +467,13 @@ credentials:
               id: "jenkins-csb-amq-streams-sa"
               scope: GLOBAL
               secret: "${casc-secret/KUBERNETES_SECRET}"
+              /*
           - gitLabApiTokenImpl:
               apiToken: "${casc-secret/GITLAB_TOKEN}"
               description: "gitlab api key for strimzi-ci-bot"
               id: "strimzi-ci-bot-token"
               scope: GLOBAL
+              */
           - usernamePassword:
               id: "strimzi-ci-bot"
               username: "strimzi-ci-bot"
