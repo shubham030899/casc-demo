@@ -1,3 +1,3 @@
-job(''job-configurator') {
+job('job-configurator') {
 descriprion('hello')
 }
